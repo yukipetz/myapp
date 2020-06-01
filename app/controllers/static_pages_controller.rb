@@ -2,7 +2,14 @@ class StaticPagesController < ApplicationController
   def home
   end
 
-  def help
+  def songs
+    require 'google/apis/youtube_v3'
+
+    youtube = Google::Apis::YoutubeV3::YouTubeService.new
+    youtube.key = "AIzaSyBZLo8NpskFXqqAAASUwOHuYpBf7XmP8TQ"
+    youtube_search_list = youtube.list_searches("id,snippet", type: "video", q: "old school black music", max_results: 50)
+    search_result = youtube_search_list.to_h
+    @movies = search_result[:items]
   end
 
   def about

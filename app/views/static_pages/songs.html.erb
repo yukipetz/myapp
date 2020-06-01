@@ -1,0 +1,16 @@
+<% provide(:title, "Songs") %>
+
+<h1>Check them out !!!</h1>
+
+<% @movies.each do |movie| %>
+  <li class="movies-item">
+    <ul>
+      <li>
+        <%= link_to movie[:snippet][:title], "https://www.youtube.com/watch?v=#{movie[:id][:video_id]}", target: "_blank", class: "search-movie-title"  %>
+      </li>
+      <li>
+        <%= image_tag(movie[:snippet][:thumbnails][:default][:url], alt: "thumbnail", class: "thumbnail") %>
+      </li>
+    </ul>
+  </li>
+<% end %>
