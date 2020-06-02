@@ -7,7 +7,7 @@ class StaticPagesController < ApplicationController
 
     youtube = Google::Apis::YoutubeV3::YouTubeService.new
     youtube.key = "AIzaSyBZLo8NpskFXqqAAASUwOHuYpBf7XmP8TQ"
-    youtube_search_list = youtube.list_searches("id,snippet", type: "video", q: "old school black music", max_results: 50)
+    youtube_search_list = youtube.list_searches("id,snippet", type: "video", q: "black music funk soul", max_results: 120)
     search_result = youtube_search_list.to_h
     @movies = search_result[:items]
   end
