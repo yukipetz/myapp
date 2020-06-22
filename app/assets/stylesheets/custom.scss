@@ -34,6 +34,13 @@ textarea {
   }
 }
 
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+}
+
 .btn-primary{
   background-color: transparent;
   color: #DA8E00;
@@ -71,8 +78,6 @@ p {
   line-height: 1.7em;
 }
 
-
-
 /* header */
 
 #logo {
@@ -96,10 +101,13 @@ p {
 /* footer */
 
 footer {
-  margin-top: 45px;
+  margin: auto;
+  width: 100%;
+  padding: 10px;  margin-top: auto;
   padding-top: 5px;
   border-top: 1px solid $gray-medium-light;
   color: $gray-light;
+  bottom: 0;
   a {
     color: $gray;
     &:hover {
@@ -245,8 +253,14 @@ input {
   }
 }
 
-/* Songs */
+/* movies */
 
 .movies-item {
   float: left;
+  margin: 80;
+  padding: 20px;
+  li {
+    list-style: none;
+    text-align: center;
+  }
 }

@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    #debugger
+    @likes = Like.where(user_id: @user.id)
   end
 
   def new
@@ -19,11 +19,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-  if @user.save
-    log_in @user
-    flash[:success] = "Welcome to Black Music Library!!"
-    redirect_to @user
-  else
+    if @user.save
+      log_in @user
+      flash[:success] = "Welcome to Black Music Library!!"
+      redirect_to @user
+    else
       render 'new'
     end
   end

@@ -1,0 +1,1 @@
+$("#like_btn<%= @video_id %>").html("<%= escape_javascript(render(partial: 'likes/like_form', locals: {movie: @video_id})) %>");

@@ -18,3 +18,15 @@
     <%= render 'follow_form' if logged_in? %>
   </div>
 </div>
+
+<h2> My Playlist </h2>
+<% @likes.each do |like| %>
+  <div class="movies-item">
+    <li>
+      <iframe width="300" height="200" src="https://www.youtube.com/embed/<%= like.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </li>
+    <div>
+      <%= link_to "Delete", {controller: "likes", action: "destroy", user_id: current_user.id, video_id: like.video_id}, {method: :delete}%>
+    </div>
+  </div>
+<% end %>

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class StaticPagesControllerTest < ActionDispatch::IntegrationTest
+class BasicPagesControllerTest < ActionDispatch::IntegrationTest
 
   def setup
     @base_title = "Black Music Library"
@@ -10,12 +10,6 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     get root_path
     assert_response :success
     assert_select "title", "#{@base_title}"
-  end
-
-  test "should get songs" do
-    get songs_path
-    assert_response :success
-    assert_select "title", "Songs | #{@base_title}"
   end
 
   test "should get about" do

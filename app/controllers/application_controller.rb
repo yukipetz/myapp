@@ -11,4 +11,13 @@ class ApplicationController < ActionController::Base
         redirect_to login_url
       end
     end
+
+    def get_youtube
+      require 'google/apis/youtube_v3'
+      youtube = Google::Apis::YoutubeV3::YouTubeService.new
+      youtube.key = "AIzaSyBZLo8NpskFXqqAAASUwOHuYpBf7XmP8TQ"
+      youtube_search_list = youtube.list_searches("id,snippet", type: "video", q: "stand-up comedy English", max_results: 18)
+      search_result = youtube_search_list.to_h
+      @movies = search_result[:items]
+    end
 end
