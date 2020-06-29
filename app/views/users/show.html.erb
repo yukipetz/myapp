@@ -19,14 +19,19 @@
   </div>
 </div>
 
-<h2> My Playlist </h2>
-<% @likes.each do |like| %>
-  <div class="movies-item">
-    <li>
-      <iframe width="300" height="200" src="https://www.youtube.com/embed/<%= like.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </li>
-    <div>
-      <%= link_to "Delete", {controller: "likes", action: "destroy", user_id: current_user.id, video_id: like.video_id}, {method: :delete}%>
+<h1> My Playlist </h1>
+<% if @likes.empty? %>
+  <h2>Nothing added to your playlist yet</h2>
+  <h2>Click <%= link_to "Movies", movies_path %> to find your favorite Stand-up Comedy!</h2>
+<% else %>
+  <% @likes.each do |like| %>
+    <div class="movies-item">
+      <li>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/<%= like.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </li>
+      <li>
+        <%= link_to "Delete", likes_path(user_id: current_user.id, video_id: like.video_id), class: "btn btn-primary", method: :delete %>
+      </li>
     </div>
-  </div>
+  <% end %>
 <% end %>

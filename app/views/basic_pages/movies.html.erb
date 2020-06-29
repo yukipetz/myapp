@@ -14,7 +14,7 @@
             <% if Like.find_by(user_id: current_user.id, video_id: movie) %>
               <p>Already in your playlist.</p>
             <% else %>
-              <li><%= link_to "Like", likes_path(user_id: current_user.id, video_id: movie), method: :post %></li>
+              <li><%= link_to "Like", likes_path(user_id: current_user.id, video_id: movie), class: "btn btn-primary", method: :post %></li>
             <% end %>
           </div>
         </ul>
