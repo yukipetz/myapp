@@ -19,13 +19,13 @@
   </div>
 </div>
 
-<h1> My Playlist </h1>
+<h2> My Playlist </h2>
 <% if @likes.empty? %>
-  <h2>Nothing added to your playlist yet</h2>
-  <h2>Click <%= link_to "Movies", movies_path %> to find your favorite Stand-up Comedy!</h2>
+  <h3>Nothing added to your playlist yet</h3>
+  <h3>Click <%= link_to "Videos", videos_path %> to find your favorite Stand-up Comedy!</h3>
 <% else %>
   <% @likes.each do |like| %>
-    <div class="movies-item">
+    <div class="video-item">
       <li>
         <iframe width="300" height="200" src="https://www.youtube.com/embed/<%= like.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </li>

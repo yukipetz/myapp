@@ -5,7 +5,7 @@ class LikesController < ApplicationController
     @video_id = params[:video_id]
     @like = Like.create(user_id: params[:user_id], video_id: params[:video_id])
     flash[:success] = "Added to your Playlist!!"
-    redirect_to movies_path
+    redirect_to videos_path
     # respond_to do |format|
     #   format.html { render template: "static_pages/songs", locals: {like: @like} }
     #   format.js

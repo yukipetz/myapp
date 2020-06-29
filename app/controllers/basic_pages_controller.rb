@@ -1,10 +1,10 @@
 class BasicPagesController < ApplicationController
-  before_action :logged_in_user, only: :songs
+  before_action :logged_in_user, only: :videos
 
   def home
   end
 
-  def movies
+  def videos
     get_youtube
   end
 

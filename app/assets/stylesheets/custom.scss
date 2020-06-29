@@ -55,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 3em;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
   color: #DA8E00;
@@ -65,9 +65,19 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
+  font-size: 2em;
   margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #DA8E00;
+  background: -webkit-linear-gradient(-45deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03, #DA8E00, #EDAC06, #F7DE05, #ECB802, #EDAC06);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;;
+}
+
+h3 {
+  font-size: 1.1em;
+  letter-spacing: -0.5px;
   text-align: center;
   font-weight: normal;
   color: $gray-light;
@@ -253,9 +263,9 @@ input {
   }
 }
 
-/* movies */
+/* videos */
 
-.movies-item {
+.video-item {
   float: left;
   margin: 80;
   padding: 20px;
