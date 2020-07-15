@@ -16,7 +16,10 @@ class ApplicationController < ActionController::Base
       require 'google/apis/youtube_v3'
       youtube = Google::Apis::YoutubeV3::YouTubeService.new
       youtube.key = "AIzaSyBZLo8NpskFXqqAAASUwOHuYpBf7XmP8TQ"
-      youtube_search_list = youtube.list_searches("id,snippet", type: "video", q: "stand-up comedy English", max_results: 18)
+      youtube_search_list = youtube.list_searches("id,snippet",
+                                                  type: "video",
+                                                  q: "stand-up comedy English",
+                                                  max_results: 18)
       search_result = youtube_search_list.to_h
       @videos = search_result[:items]
     end
