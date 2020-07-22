@@ -1,24 +1,26 @@
-# README
+# Stand-up Comedy Library
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This tool shows stand-up comedy youtube videos.
 
-Things you may want to cover:
+# Requirement
+- Ruby: 2.6.3
+- Ruby on rails: 5.2.3
+- google-api-client: 0.9.20
+- PostgreSQL: 12.2
 
-* Ruby version
+# Features
+- 動画一覧表示機能
+- 管理ユーザー登録機能
+- 管理ユーザーログイン機能
+- DBテーブルのリレーション管理
+- ページネーション機能
+- テスト機能
 
-* System dependencies
+# App URL
+https://stand-up-comedy.herokuapp.com/
 
-* Configuration
+# License
+This software is released under the MIT License, see LICENSE.md
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Authors
+yukipetz
