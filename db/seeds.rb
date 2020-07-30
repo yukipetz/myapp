@@ -1,12 +1,12 @@
 User.create!(name:  "Example User",
-             email: "example@myapp.org",
+             email: "example@myapp.com",
              password:              "foobar",
              password_confirmation: "foobar",
              admin: true)
 
 99.times do |n|
   name  = Faker::Name.name
-  email = "example-#{n+1}@railstutorial.org"
+  email = "example-#{n+1}@myapp.com"
   password = "password"
   User.create!(name:  name,
                email: email,
